@@ -19,9 +19,9 @@ public class ModWorldGen {
                     .withConfiguration(
                             new OreFeatureConfig(
                                     OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                                    RUBY_ORE.get().getDefaultState(), 5))
+                                    RUBY_ORE.get().getDefaultState(), 6))
 //                    .withChance(1.0f)
-                    .withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(15,0, 0, 75)))
+                    .withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20,0, 0, 80)))
             );
         }
     }
