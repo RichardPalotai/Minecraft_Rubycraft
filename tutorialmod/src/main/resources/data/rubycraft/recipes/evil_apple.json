@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "ccc",
+    "cac",
+    "ccc"
+  ],
+  "key":
+  {
+    "c":
+    {
+      "item": "minecraft:coal"
+    },
+    "a":
+    {
+      "item": "minecraft:apple"
+    }
+  },
+  "result":
+  {
+    "item": "rubycraft:evil_apple",
+    "count": 1
+  }
+}

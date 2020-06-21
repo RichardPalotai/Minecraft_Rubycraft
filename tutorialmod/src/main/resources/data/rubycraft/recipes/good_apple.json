@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "tat",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "minecraft:bone_meal"
+    },
+    "a":
+    {
+      "item": "minecraft:apple"
+    },
+    "t":
+    {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "result":
+  {
+    "item": "rubycraft:good_apple",
+    "count": 1
+  }
+}
