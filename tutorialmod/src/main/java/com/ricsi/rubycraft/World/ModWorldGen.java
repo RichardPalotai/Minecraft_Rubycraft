@@ -8,7 +8,6 @@ import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static com.ricsi.rubycraft.util.RegistryHandler.BLOCKS;
 import static com.ricsi.rubycraft.util.RegistryHandler.RUBY_ORE;
 
 public class ModWorldGen {

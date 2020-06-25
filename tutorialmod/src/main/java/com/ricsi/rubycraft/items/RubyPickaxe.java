@@ -1,17 +1,18 @@
 package com.ricsi.rubycraft.items;
 
 import com.ricsi.rubycraft.rubycraft;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.ToolType;
+import net.minecraft.item.PickaxeItem;
 
 
-public class RubyPickaxe extends Item {
+public class RubyPickaxe extends PickaxeItem {
 
     public RubyPickaxe() {
-        super(new Properties()
-        .group(rubycraft.TAB)
-        .defaultMaxDamage(6)
-        .addToolType(ToolType.PICKAXE, 5)
+        super(
+                RicskoModItemTier.RubyTier(),
+                6,
+                3.0f,
+                new Properties()
+                        .group(rubycraft.TAB)
         );
     }
 }
