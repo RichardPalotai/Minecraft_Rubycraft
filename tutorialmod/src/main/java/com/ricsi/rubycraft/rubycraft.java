@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 @Mod("rubycraft")
     public class rubycraft
 {
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "rubycraft";
 
     public rubycraft() {

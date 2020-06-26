@@ -1,12 +1,9 @@
 package com.ricsi.rubycraft.util;
 
-import com.ricsi.rubycraft.items.EvilApple;
-import com.ricsi.rubycraft.items.GoodApple;
-import com.ricsi.rubycraft.items.RubyPickaxe;
+import com.ricsi.rubycraft.items.*;
 import com.ricsi.rubycraft.rubycraft;
 import com.ricsi.rubycraft.blocks.BlockItemBase;
 import com.ricsi.rubycraft.blocks.*;
-import com.ricsi.rubycraft.items.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
@@ -29,6 +26,7 @@ public class RegistryHandler {
     public static final RegistryObject<Item> EVIL_APPLE = ITEMS.register("evil_apple", EvilApple::new);
     public static final RegistryObject<Item> GOOD_APPLE = ITEMS.register("good_apple", GoodApple::new);
     public static final RegistryObject<Item> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe", RubyPickaxe::new);
+    public static final RegistryObject<Item> RAIN_ROD = ITEMS.register("rain_rod", RainRod::new);
 
     // Blocks
     public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
