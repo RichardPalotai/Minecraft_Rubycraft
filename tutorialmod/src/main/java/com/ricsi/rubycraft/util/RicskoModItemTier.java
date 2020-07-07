@@ -1,4 +1,4 @@
-package com.ricsi.rubycraft.items;
+package com.ricsi.rubycraft.util;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
@@ -97,4 +97,4 @@ public class RicskoModItemTier implements IItemTier // Itt latod, hogy a RicskoM
    public Ingredient getRepairMaterial() {
       return this.repairMaterial.getValue();
    }
-}  
+}

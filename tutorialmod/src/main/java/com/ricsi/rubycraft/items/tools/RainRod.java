@@ -1,4 +1,4 @@
-package com.ricsi.rubycraft.items;
+package com.ricsi.rubycraft.items.tools;
 
 import com.ricsi.rubycraft.rubycraft;
 import net.minecraft.client.util.ITooltipFlag;

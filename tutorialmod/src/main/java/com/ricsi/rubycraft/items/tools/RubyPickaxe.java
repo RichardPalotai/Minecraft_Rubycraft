@@ -1,12 +1,11 @@
-package com.ricsi.rubycraft.items;
+package com.ricsi.rubycraft.items.tools;
 
-import com.ricsi.rubycraft.items.RicskoModItemTier;
+import com.ricsi.rubycraft.util.RicskoModItemTier;
 import com.ricsi.rubycraft.rubycraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.PickaxeItem;

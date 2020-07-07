@@ -1,10 +1,10 @@
-package com.ricsi.rubycraft.items;
+package com.ricsi.rubycraft.items.armors;
 
 import com.ricsi.rubycraft.rubycraft;
+import com.ricsi.rubycraft.util.ModArmorTier;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.Item;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -12,10 +12,10 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class RubyHoe extends HoeItem {
+public class RubyHelmet extends ArmorItem {
 
-    public RubyHoe() {
-        super(RicskoModItemTier.RubyTier(), -2.8f, new Item.Properties().group(rubycraft.TAB));
+    public RubyHelmet() {
+        super(ModArmorTier.RubyArmorTier(), EquipmentSlotType.HEAD, new Properties().group(rubycraft.TAB));
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
