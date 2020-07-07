@@ -8,7 +8,9 @@ import com.ricsi.rubycraft.rubycraft;
 import com.ricsi.rubycraft.blocks.BlockItemBase;
 import com.ricsi.rubycraft.blocks.*;
 import net.minecraft.block.Block;
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -44,6 +46,13 @@ public class RegistryHandler {
     // Block Items
     public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore", () -> new BlockItemBase(RUBY_ORE.get()));
+
+    // Pickaxes
+    public static final RegistryObject<PickaxeItem> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
+            () -> new PickaxeItem(RicskoModItemTier.RubyTier(), 1, -2.8F,
+                    new Item.Properties().group(rubycraft.TAB)));
+
+
 }
 
 
