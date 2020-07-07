@@ -45,11 +45,11 @@ public class RicskoModItemTier implements IItemTier // Itt latod, hogy a RicskoM
    public static RicskoModItemTier RubyTier() {
 	   // Itt definialjuk az egyes valtozokat, amiket majd a private konstruktornak atadunk
 	   // Ha egy uj sajat ItemTier-t szeretnel definialni, akkor eleg ezt a static buildert lemasolnod, megvaltoztatni a nevet (pl. ObsidianTier) es uj ertekeket adni a belsejeben
-	   int harvestLevel =  5;
-	   int maxUses =  2500;
-	   float efficiency = 5.0f;
-	   float attackDamage = 5.0f;
-	   int enchantability = 3;
+	   int harvestLevel =  3;
+	   int maxUses =  1500;
+	   float efficiency = 8.0f;
+	   float attackDamage = 6.0f;
+	   int enchantability = 12;
 	   // Ez a valtozo egy kicsit trukkosebb, o ugyanis egy specialis fuggvenyt ker, ami megmondja hogyan valasszon az Itemek kozul, amikkel aztan javitani lehet ezt a targyat
 	   // A RUBY.get() azt mondja meg, hgoy a Registry-dbe irt RUBY entry (azaz bejegyzés) belsejében tárolt objektumot használja
 	   Supplier<Ingredient> repairMaterial = createIngredientSupplier(RUBY.get());
