@@ -1,6 +1,11 @@
 {
   "item.rubycraft.ruby": "Rubino",
+  "item.rubycraft.rain_rod": "Pioggia Asta",
   "item.rubycraft.ruby_pickaxe": "Rubino Piccone",
+  "item.rubycraft.ruby_sword": "Rubino Spada",
+  "item.rubycraft.ruby_hoe": "Rubino Zappa",
+  "item.rubycraft.ruby_axe": "Rubino Scure",
+  "item.rubycraft.ruby_shovel": "Rubino Badile",
   "item.rubycraft.evil_apple": "Fello Mela",
   "item.rubycraft.good_apple": "Buono Mela",
   "block.rubycraft.ruby_block": "Rubino Cubo",
