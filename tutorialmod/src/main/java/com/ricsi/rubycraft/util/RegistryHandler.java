@@ -34,7 +34,7 @@ public class RegistryHandler {
     }
 
     // Items
-    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", Ruby::new);
     public static final RegistryObject<Item> EVIL_APPLE = ITEMS.register("evil_apple", EvilApple::new);
     public static final RegistryObject<Item> GOOD_APPLE = ITEMS.register("good_apple", GoodApple::new);
 
@@ -60,12 +60,6 @@ public class RegistryHandler {
     // Block Items
     public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore", () -> new BlockItemBase(RUBY_ORE.get()));
-
-    // Pickaxes
-    public static final RegistryObject<PickaxeItem> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
-            () -> new PickaxeItem(RicskoModItemTier.RubyTier(), 1, -2.8F,
-                    new Item.Properties().group(rubycraft.TAB)));
-
 
 }
 
