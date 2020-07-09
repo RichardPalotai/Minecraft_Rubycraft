@@ -1,6 +1,5 @@
-package com.ricsi.rubycraft;
+package com.ricsi.rubycraft.World;
 
-import com.ricsi.rubycraft.World.ModWorldGen;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
