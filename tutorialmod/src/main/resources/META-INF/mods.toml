@@ -10,23 +10,24 @@ modId="rubycraft" #mandatory
 
 version="${file.jarVersion}" #mandatory
 
-displayName="rubycraft mod" #mandatory
+displayName="Rubycraft Mod" #mandatory
 
 updateJSONURL="http://myurl.me/" #optional
 
-displayURL="http://example.com/" #optional
+displayURL="https://github.com/RichardPalotai/Minecraftmodding" #optional
 
-logoFile="examplemod.png" #optional
+logoFile="rubylogo.png" #optional
 
-credits="Thanks for downloading this rubycraft mod" #optional
+credits="Thanks for downloading Rubycraft" #optional
 
 authors="Richard Palotai" #optional
 
 description='''
-A rubycraft mod for testing.
+A mod that contains many Ruby items and blocks.
+Various of ideas about Ruby and how It get in the game.
 '''
 
-[[dependencies.examplemod]] #optional
+[[dependencies.rubycraft]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -38,7 +39,7 @@ A rubycraft mod for testing.
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.rubycraft]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"

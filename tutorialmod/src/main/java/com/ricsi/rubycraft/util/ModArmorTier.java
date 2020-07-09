@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 import static com.ricsi.rubycraft.util.RegistryHandler.RUBY;
 
-   public class ModArmorTier implements IArmorMaterial {
+public class ModArmorTier implements IArmorMaterial {
 
     private final int Durability;
     private final int DamageReductionAmount;
@@ -20,10 +20,9 @@ import static com.ricsi.rubycraft.util.RegistryHandler.RUBY;
     private final int Toughness;
     private final String Name;
     private final LazyValue<Ingredient> repairMaterial;
-       private SoundEvent soundEvent;
+    private SoundEvent soundEvent;
 
-       private ModArmorTier(int durabilityIn, int damageReductionAmountIn, float enchantabilityIn, float soundEventIn, int toughnessIn, String NameIn, Supplier<Ingredient> repairMaterialIn)
-    {
+    private ModArmorTier(int durabilityIn, int damageReductionAmountIn, float enchantabilityIn, float soundEventIn, int toughnessIn, String NameIn, Supplier<Ingredient> repairMaterialIn) {
         this.Durability = durabilityIn;
         this.DamageReductionAmount = damageReductionAmountIn;
         this.Enchantability = (int) enchantabilityIn;
@@ -34,7 +33,7 @@ import static com.ricsi.rubycraft.util.RegistryHandler.RUBY;
     }
 
     public static ModArmorTier RubyArmorTier() {
-        int Durability =  363;
+        int Durability = 363;
         int DamageReductionAmount = 20;
         int Enchantability = 12;
         float SoundEvent = 1.0f;
@@ -47,30 +46,43 @@ import static com.ricsi.rubycraft.util.RegistryHandler.RUBY;
     }
 
     private static Supplier<Ingredient> createIngredientSupplier(Item item) {
-        return ()-> Ingredient.fromItems( item );
+        return () -> Ingredient.fromItems(item);
     }
 
 
-
-       @Override
-       public int getDurability(EquipmentSlotType slotType) {return this.Durability;}
-
-       @Override
-       public int getDamageReductionAmount(EquipmentSlotType slotType) {return this.DamageReductionAmount;}
-
-
-       @Override
-    public int getEnchantability() {return this.Enchantability;}
+    @Override
+    public int getDurability(EquipmentSlotType slotType) {
+        return this.Durability;
+    }
 
     @Override
-    public net.minecraft.util.SoundEvent getSoundEvent() {return soundEvent;}
+    public int getDamageReductionAmount(EquipmentSlotType slotType) {
+        return this.DamageReductionAmount;
+    }
+
 
     @Override
-    public Ingredient getRepairMaterial() {return this.repairMaterial.getValue();}
+    public int getEnchantability() {
+        return this.Enchantability;
+    }
 
-       @Override
-       public String getName() {return this.Name;}
+    @Override
+    public net.minecraft.util.SoundEvent getSoundEvent() {
+        return soundEvent;
+    }
 
-       @Override
-    public float getToughness() {return this.Toughness;}
+    @Override
+    public Ingredient getRepairMaterial() {
+        return this.repairMaterial.getValue();
+    }
+
+    @Override
+    public String getName() {
+        return this.Name;
+    }
+
+    @Override
+    public float getToughness() {
+        return this.Toughness;
+    }
 }

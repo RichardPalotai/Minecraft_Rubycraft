@@ -1,5 +1,7 @@
 package com.ricsi.rubycraft.util;
 
+import com.ricsi.rubycraft.blocks.FrozenRubyOre;
+import com.ricsi.rubycraft.blocks.RubyOre;
 import com.ricsi.rubycraft.items.*;
 import com.ricsi.rubycraft.items.armors.RubyBoots;
 import com.ricsi.rubycraft.items.armors.RubyChestplate;
@@ -15,9 +17,7 @@ import com.ricsi.rubycraft.rubycraft;
 import com.ricsi.rubycraft.blocks.BlockItemBase;
 import com.ricsi.rubycraft.blocks.*;
 import net.minecraft.block.Block;
-import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -35,6 +35,8 @@ public class RegistryHandler {
 
     // Items
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", Ruby::new);
+    public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard", RubyShard::new);
+    public static final RegistryObject<Item> FROZEN_RUBY = ITEMS.register("frozen_ruby", FrozenRuby::new);
     public static final RegistryObject<Item> EVIL_APPLE = ITEMS.register("evil_apple", EvilApple::new);
     public static final RegistryObject<Item> GOOD_APPLE = ITEMS.register("good_apple", GoodApple::new);
 
@@ -56,10 +58,12 @@ public class RegistryHandler {
     // Blocks
     public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
     public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore", RubyOre::new);
+    public static final RegistryObject<Block> FROZEN_RUBY_ORE = BLOCKS.register("frozen_ruby_ore", FrozenRubyOre::new);
 
     // Block Items
     public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore", () -> new BlockItemBase(RUBY_ORE.get()));
+    public static final RegistryObject<Item> FROZEN_RUBY_ORE_ITEM = ITEMS.register("frozen_ruby_ore", () -> new BlockItemBase(FROZEN_RUBY_ORE.get()));
 
 }
 

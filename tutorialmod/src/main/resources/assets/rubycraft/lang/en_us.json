@@ -1,5 +1,8 @@
 {
   "item.rubycraft.ruby": "Ruby",
+  "item.rubycraft.ruby_shard": "Ruby Shard",
+  "item.rubycraft.frozen_ruby": "Frozen Ruby",
+  "block.rubycraft.frozen_ruby_ore": "Frozen Ruby Ore",
   "item.rubycraft.ruby_chestplate": "Ruby Chestplate",
   "item.rubycraft.ruby_leggings": "Ruby Leggings",
   "item.rubycraft.ruby_boots": "Ruby Boots",

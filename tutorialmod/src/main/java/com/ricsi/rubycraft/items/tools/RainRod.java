@@ -40,10 +40,18 @@ public class RainRod extends Item {
             worldIn.setRainStrength(0.0f);
             isGlowing = false;
         } else {
-            worldIn.setRainStrength(10.0f);
-            worldIn.setThunderStrength(10.0f);
+            worldIn.setRainStrength(100);
+            worldIn.setThunderStrength(50);
             Dimension dim = worldIn.dimension;
-            worldIn.setBlockState(playerIn.getPosition().add(3,3,3), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,1,0), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,2,0), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,3,0), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,1,-1), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,2,-1), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,3,-1), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,1,1), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,2,1), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setBlockState(playerIn.getPosition().add(3,3,1), RUBY_BLOCK.get().getDefaultState());
 
 
                     isGlowing = true;
