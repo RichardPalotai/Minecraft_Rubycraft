@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 import java.util.function.Supplier;
 
@@ -16,13 +17,14 @@ public class ModArmorTier implements IArmorMaterial {
     private final int Durability;
     private final int DamageReductionAmount;
     private final int Enchantability;
-    private final float SoundEvent;
     private final int Toughness;
     private final String Name;
     private final LazyValue<Ingredient> repairMaterial;
-    private SoundEvent soundEvent;
+    private SoundEvent SoundEvent;
 
-    private ModArmorTier(int durabilityIn, int damageReductionAmountIn, float enchantabilityIn, float soundEventIn, int toughnessIn, String NameIn, Supplier<Ingredient> repairMaterialIn) {
+    private ModArmorTier(
+            int durabilityIn, int damageReductionAmountIn, float enchantabilityIn,
+            SoundEvent soundEventIn, int toughnessIn, String NameIn, Supplier<Ingredient> repairMaterialIn) {
         this.Durability = durabilityIn;
         this.DamageReductionAmount = damageReductionAmountIn;
         this.Enchantability = (int) enchantabilityIn;
@@ -36,13 +38,13 @@ public class ModArmorTier implements IArmorMaterial {
         int Durability = 363;
         int DamageReductionAmount = 20;
         int Enchantability = 12;
-        float SoundEvent = 1.0f;
         int Toughness = 2;
-        String Name = new String();
+        SoundEvent soundEvent = SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND;
+        String Name = "Ruby";
 
         Supplier<Ingredient> repairMaterial = createIngredientSupplier(RUBY.get());
 
-        return new ModArmorTier(Durability, DamageReductionAmount, Enchantability, SoundEvent, Toughness, Name, repairMaterial);
+        return new ModArmorTier(Durability, DamageReductionAmount, Enchantability, soundEvent, Toughness, Name, repairMaterial);
     }
 
     private static Supplier<Ingredient> createIngredientSupplier(Item item) {
@@ -52,11 +54,21 @@ public class ModArmorTier implements IArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlotType slotType) {
+        if (slotType.equals(EquipmentSlotType.FEET)) {
+            return this.Durability - 100;
+        }
+        if (slotType.equals(EquipmentSlotType.HEAD)) {
+            return this.Durability * 2;
+        }
+
         return this.Durability;
     }
 
     @Override
     public int getDamageReductionAmount(EquipmentSlotType slotType) {
+        if (slotType.equals(EquipmentSlotType.CHEST)) {
+            return this.DamageReductionAmount + 5;
+        }
         return this.DamageReductionAmount;
     }
 
@@ -68,7 +80,7 @@ public class ModArmorTier implements IArmorMaterial {
 
     @Override
     public net.minecraft.util.SoundEvent getSoundEvent() {
-        return soundEvent;
+        return SoundEvent;
     }
 
     @Override
