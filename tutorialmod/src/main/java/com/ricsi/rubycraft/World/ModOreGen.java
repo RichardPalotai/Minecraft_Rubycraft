@@ -2,6 +2,7 @@ package com.ricsi.rubycraft.World;
 
 import com.ricsi.rubycraft.rubycraft;
 import com.ricsi.rubycraft.util.RegistryHandler;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.pattern.BlockMatcher;
@@ -32,18 +33,19 @@ public class ModOreGen {
             if (biome.getCategory() == Biome.Category.NETHER) {
                 //End Generation
             } else if (biome.getCategory() == Biome.Category.THEEND) {
-                genOre(biome, 18, 3, 5, 80, END_STONE, RegistryHandler.RUBY_ORE.get().getDefaultState(), 12);
                 //World Generation
             } else {
                 if (biome.getCategory() == Biome.Category.ICY)
-                    genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.FROZEN_RUBY_ORE.get().getDefaultState(), 5);
-                else{
-                    genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.RUBY_ORE.get().getDefaultState(), 5);
-
-
+                    addOreToBiome(biome, RegistryHandler.FROZEN_RUBY_ORE.get());
+                else {
+                    addOreToBiome(biome, RegistryHandler.RUBY_ORE.get());
                 }
             }
         }
+    }
+
+    private static void addOreToBiome(Biome biome, Block block) {
+        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, block.getDefaultState(), 5);
     }
 
     private static void genOre(Biome biome, int count, int bottomOffset, int topOffset, int max, OreFeatureConfig.FillerBlockType filler, BlockState defaultBlockstate, int size) {
