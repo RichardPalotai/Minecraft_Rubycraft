@@ -15,7 +15,7 @@ import java.util.List;
 public class RubyHoe extends HoeItem {
 
     public RubyHoe() {
-        super(RicskoModItemTier.RubyTier(), -2.8f, new Item.Properties().group(rubycraft.TAB));
+        super(RicskoModItemTier.RubyTier(), -3,-1.0f, new Item.Properties().group(rubycraft.TAB));
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

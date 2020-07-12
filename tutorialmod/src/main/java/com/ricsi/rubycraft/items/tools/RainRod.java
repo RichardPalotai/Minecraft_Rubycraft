@@ -13,12 +13,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.Dimension;
 
 import javax.annotation.Nullable;
 import java.util.List;
-
-import static com.ricsi.rubycraft.util.RegistryHandler.RUBY_BLOCK;
 
 public class RainRod extends Item {
     private boolean isGlowing = false;
@@ -42,19 +39,8 @@ public class RainRod extends Item {
         } else {
             worldIn.setRainStrength(100);
             worldIn.setThunderStrength(50);
-            Dimension dim = worldIn.dimension;
-            worldIn.setBlockState(playerIn.getPosition().add(3,1,0), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,2,0), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,3,0), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,1,-1), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,2,-1), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,3,-1), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,1,1), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,2,1), RUBY_BLOCK.get().getDefaultState());
-            worldIn.setBlockState(playerIn.getPosition().add(3,3,1), RUBY_BLOCK.get().getDefaultState());
 
-
-                    isGlowing = true;
+            isGlowing = true;
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

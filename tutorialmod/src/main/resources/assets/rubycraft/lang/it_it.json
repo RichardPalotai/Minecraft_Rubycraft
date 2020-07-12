@@ -1,0 +1,21 @@
+{
+  "item.rubycraft.ruby": "Rubino",
+  "item.rubycraft.ruby_shard": "Frammento di rubino",
+  "item.rubycraft.frozen_ruby": "Rubino congelato",
+  "item.rubycraft.frozen_ruby_ore": "minerale di rubino congelato",
+  "item.rubycraft.ruby_helmet": "Casco rubino",
+  "item.rubycraft.ruby_boots": "Stivali di rubino",
+  "item.rubycraft.ruby_leggings": "Rubino Ghette",
+  "item.rubycraft.ruby_chestplate": "Corazza rubino",
+  "item.rubycraft.rain_rod": "Canna da pioggia",
+  "item.rubycraft.ruby_pickaxe": "piccone rubino",
+  "item.rubycraft.ruby_sword": "Spada rubica",
+  "item.rubycraft.ruby_hoe": "Zappa rubino",
+  "item.rubycraft.ruby_axe": "Ascia rubino",
+  "item.rubycraft.ruby_shovel": "Pala di rubino",
+  "item.rubycraft.evil_apple": "Mela cattiva",
+  "item.rubycraft.good_apple": "Buona Mela",
+  "block.rubycraft.ruby_block": "Blocco rubino",
+  "block.rubycraft.ruby_ore": "Minerale di rubino",
+  "itemGroup.rubycraftTab": "mestiererubino"
+}

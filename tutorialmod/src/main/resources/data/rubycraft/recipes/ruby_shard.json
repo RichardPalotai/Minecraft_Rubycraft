@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rubycraft:ruby"
+    }
+  ],
+  "result": {
+    "item": "rubycraft:ruby_shard",
+    "count": 9
+  }
+}

@@ -21,10 +21,11 @@ public class ModArmorTier implements IArmorMaterial {
     private final String Name;
     private final LazyValue<Ingredient> repairMaterial;
     private SoundEvent SoundEvent;
+    private final float knockbackResistance;
 
     private ModArmorTier(
             int durabilityIn, int damageReductionAmountIn, float enchantabilityIn,
-            SoundEvent soundEventIn, int toughnessIn, String NameIn, Supplier<Ingredient> repairMaterialIn) {
+            SoundEvent soundEventIn, int toughnessIn, String NameIn, Supplier<Ingredient> repairMaterialIn, float knockbackResistance) {
         this.Durability = durabilityIn;
         this.DamageReductionAmount = damageReductionAmountIn;
         this.Enchantability = (int) enchantabilityIn;
@@ -32,19 +33,21 @@ public class ModArmorTier implements IArmorMaterial {
         this.Toughness = toughnessIn;
         this.Name = NameIn;
         this.repairMaterial = new LazyValue<>(repairMaterialIn);
+        this.knockbackResistance = knockbackResistance;
     }
 
     public static ModArmorTier RubyArmorTier() {
-        int Durability = 363;
-        int DamageReductionAmount = 20;
-        int Enchantability = 12;
-        int Toughness = 2;
-        SoundEvent soundEvent = SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND;
-        String Name = "Ruby";
+        int Durability = 25;
+        int DamageReductionAmount = 0;
+        int Enchantability = 18;
+        int Toughness = 1;
+        float knockbackResistance = 0.0f;
+        SoundEvent soundEvent = SoundEvents.ITEM_ARMOR_EQUIP_GENERIC;
+        String Name = "rubycraft:ruby_armor";
 
         Supplier<Ingredient> repairMaterial = createIngredientSupplier(RUBY.get());
 
-        return new ModArmorTier(Durability, DamageReductionAmount, Enchantability, soundEvent, Toughness, Name, repairMaterial);
+        return new ModArmorTier(Durability, DamageReductionAmount, Enchantability, soundEvent, Toughness, Name, repairMaterial, knockbackResistance);
     }
 
     private static Supplier<Ingredient> createIngredientSupplier(Item item) {
@@ -54,20 +57,34 @@ public class ModArmorTier implements IArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlotType slotType) {
-        if (slotType.equals(EquipmentSlotType.FEET)) {
-            return this.Durability - 100;
-        }
         if (slotType.equals(EquipmentSlotType.HEAD)) {
-            return this.Durability * 2;
+            return this.Durability * 11;
         }
-
+        if (slotType.equals(EquipmentSlotType.CHEST)) {
+            return this.Durability * 16;
+        }
+        if (slotType.equals(EquipmentSlotType.LEGS)) {
+            return this.Durability * 15;
+        }
+        if (slotType.equals(EquipmentSlotType.FEET)) {
+            return this.Durability * 13;
+        }
         return this.Durability;
     }
 
     @Override
     public int getDamageReductionAmount(EquipmentSlotType slotType) {
+        if (slotType.equals(EquipmentSlotType.HEAD)) {
+            return this.DamageReductionAmount + 2;
+        }
         if (slotType.equals(EquipmentSlotType.CHEST)) {
+            return this.DamageReductionAmount + 6;
+        }
+        if (slotType.equals(EquipmentSlotType.LEGS)) {
             return this.DamageReductionAmount + 5;
+        }
+        if (slotType.equals(EquipmentSlotType.FEET)) {
+            return this.DamageReductionAmount + 2;
         }
         return this.DamageReductionAmount;
     }
@@ -94,7 +111,10 @@ public class ModArmorTier implements IArmorMaterial {
     }
 
     @Override
-    public float getToughness() {
-        return this.Toughness;
+    public float getToughness() { return this.Toughness; }
+
+    @Override
+    public float func_230304_f_() {
+        return this.knockbackResistance;
     }
 }
