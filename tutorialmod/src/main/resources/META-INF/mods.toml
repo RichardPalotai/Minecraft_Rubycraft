@@ -1,7 +1,7 @@
+
 modLoader="javafml" #mandatory
 
-loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-
+loaderVersion="[32,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 issueTrackerURL="http://my.issue.tracker/" #optional
 
 [[mods]] #mandatory
@@ -10,37 +10,38 @@ modId="rubycraft" #mandatory
 
 version="${file.jarVersion}" #mandatory
 
-displayName="rubycraft mod" #mandatory
+displayName="Rubycraft Mod" #mandatory
 
 updateJSONURL="http://myurl.me/" #optional
 
-displayURL="http://example.com/" #optional
+displayURL="https://github.com/RichardPalotai/Minecraftmodding" #optional
 
 logoFile="examplemod.png" #optional
 
-credits="Thanks for downloading this rubycraft mod" #optional
+credits="Thanks for downloading Rubycraft." #optional
 
 authors="Richard Palotai" #optional
 
 description='''
-A rubycraft mod for testing.
+A mod that contains many Ruby items and blocks.
+Various of ideas about Ruby and how It get in the game.
 '''
 
-[[dependencies.examplemod]] #optional
-    # the modid of the dependency
+[[dependencies.rubycraft]] #optional
+
     modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
+
     mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[31,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+
+    versionRange="[32,)" #mandatory
+
     ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+
     side="BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.rubycraft]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.1]"
     ordering="NONE"
     side="BOTH"

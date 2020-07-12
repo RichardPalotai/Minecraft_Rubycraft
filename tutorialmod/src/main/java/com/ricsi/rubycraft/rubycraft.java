@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("rubycraft")
-    public class rubycraft
+public class rubycraft
 {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "rubycraft";

@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "minecraft:emerald"
+    "item": "rubycraft:frozen_ruby"
   },
   "result": "rubycraft:ruby",
-  "experience": 1.0,
-  "cookingtime": 100
+  "experience": 2.0,
+  "cookingtime": 200
 }

@@ -13,12 +13,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.Dimension;
 
 import javax.annotation.Nullable;
 import java.util.List;
-
-import static com.ricsi.rubycraft.util.RegistryHandler.RUBY_BLOCK;
 
 public class RainRod extends Item {
     private boolean isGlowing = false;
@@ -40,13 +37,10 @@ public class RainRod extends Item {
             worldIn.setRainStrength(0.0f);
             isGlowing = false;
         } else {
-            worldIn.setRainStrength(10.0f);
-            worldIn.setThunderStrength(10.0f);
-            Dimension dim = worldIn.dimension;
-            worldIn.setBlockState(playerIn.getPosition().add(3,3,3), RUBY_BLOCK.get().getDefaultState());
+            worldIn.setRainStrength(100);
+            worldIn.setThunderStrength(50);
 
-
-                    isGlowing = true;
+            isGlowing = true;
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

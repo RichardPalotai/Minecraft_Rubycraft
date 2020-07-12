@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "rubycraft:block/frozen_ruby_ore" }
+  }
+}
