@@ -1,5 +1,6 @@
 package com.ricsi.rubycraft.util;
 
+import com.ricsi.rubycraft.Entities.Giacomo;
 import com.ricsi.rubycraft.blocks.FrozenRubyOre;
 import com.ricsi.rubycraft.blocks.RubyOre;
 import com.ricsi.rubycraft.items.*;
@@ -17,7 +18,10 @@ import com.ricsi.rubycraft.rubycraft;
 import com.ricsi.rubycraft.blocks.BlockItemBase;
 import com.ricsi.rubycraft.blocks.*;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,6 +29,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class RegistryHandler {
 
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, rubycraft.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, rubycraft.MOD_ID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, rubycraft.MOD_ID);
 
@@ -32,6 +37,11 @@ public class RegistryHandler {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
+
+    //Entities
+    public static final RegistryObject<EntityType<Giacomo>> GIACOMO = ENTITY_TYPES.register(
+            "giacomo",
+            () -> EntityType.Builder.create(Giacomo::new, EntityClassification.CREATURE).size(0.6f, 0.7f).build(new ResourceLocation("rubycraft", "giacomo").toString()));
 
     // Items
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", Ruby::new);
