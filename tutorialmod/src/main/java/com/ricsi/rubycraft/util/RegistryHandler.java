@@ -69,10 +69,11 @@ public class RegistryHandler {
     public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
     public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore", RubyOre::new);
     public static final RegistryObject<Block> FROZEN_RUBY_ORE = BLOCKS.register("frozen_ruby_ore", FrozenRubyOre::new);
+    public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", Oven::new);
 
     // Block Items
     public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore", () -> new BlockItemBase(RUBY_ORE.get()));
     public static final RegistryObject<Item> FROZEN_RUBY_ORE_ITEM = ITEMS.register("frozen_ruby_ore", () -> new BlockItemBase(FROZEN_RUBY_ORE.get()));
-
+    public static final RegistryObject<Item> OVEN_ITEM = ITEMS.register("oven", () -> new BlockItemBase(OVEN.get()));
 }
