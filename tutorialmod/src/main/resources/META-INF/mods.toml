@@ -16,7 +16,7 @@ updateJSONURL="http://myurl.me/" #optional
 
 displayURL="https://github.com/RichardPalotai/Minecraftmodding" #optional
 
-logoFile="examplemod.png" #optional
+logoFile="logo.png" #optional
 
 credits="Thanks for downloading Rubycraft." #optional
 
