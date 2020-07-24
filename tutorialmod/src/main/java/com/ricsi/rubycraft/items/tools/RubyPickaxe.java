@@ -1,7 +1,7 @@
 package com.ricsi.rubycraft.items.tools;
 
 import com.ricsi.rubycraft.rubycraft;
-import com.ricsi.rubycraft.util.RicskoModItemTier;
+import com.ricsi.rubycraft.util.enums.RicskoModItemTier;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

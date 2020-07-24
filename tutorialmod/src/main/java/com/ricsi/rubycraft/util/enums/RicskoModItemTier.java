@@ -1,5 +1,6 @@
-package com.ricsi.rubycraft.util;
+package com.ricsi.rubycraft.util.enums;
 
+import com.ricsi.rubycraft.init.ModItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
@@ -7,8 +8,6 @@ import net.minecraft.util.LazyValue;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
-
-import static com.ricsi.rubycraft.util.RegistryHandler.RUBY;
 
 public class RicskoModItemTier implements IItemTier // Itt latod, hogy a RicskoModItemTier osztaly implementalja ay IItemTier interfeszt
 {
@@ -52,7 +51,7 @@ public class RicskoModItemTier implements IItemTier // Itt latod, hogy a RicskoM
         int enchantability = 12;
         // Ez a valtozo egy kicsit trukkosebb, o ugyanis egy specialis fuggvenyt ker, ami megmondja hogyan valasszon az Itemek kozul, amikkel aztan javitani lehet ezt a targyat
         // A RUBY.get() azt mondja meg, hgoy a Registry-dbe irt RUBY entry (azaz bejegyzés) belsejében tárolt objektumot használja
-        Supplier<Ingredient> repairMaterial = createIngredientSupplier(RUBY.get());
+        Supplier<Ingredient> repairMaterial = createIngredientSupplier(ModItems.RUBY.get());
 
         // Ittt hivjuk meg a belso privat konstruktort a fent leirt ertekekkel
         return new RicskoModItemTier(harvestLevel, maxUses, efficiency, attackDamage, enchantability, repairMaterial);

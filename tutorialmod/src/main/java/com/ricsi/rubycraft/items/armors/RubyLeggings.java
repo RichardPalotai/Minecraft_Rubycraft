@@ -1,7 +1,7 @@
 package com.ricsi.rubycraft.items.armors;
 
 import com.ricsi.rubycraft.rubycraft;
-import com.ricsi.rubycraft.util.ModArmorTier;
+import com.ricsi.rubycraft.util.enums.ModArmorTier;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
