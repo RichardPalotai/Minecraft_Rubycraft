@@ -1,7 +1,7 @@
-package com.ricsi.rubycraft.World;
+package com.ricsi.rubycraft.world.gen;
 
+import com.ricsi.rubycraft.init.ModBlocks;
 import com.ricsi.rubycraft.rubycraft;
-import com.ricsi.rubycraft.util.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -33,12 +33,12 @@ public class ModOreGen {
             if (biome.getCategory() == Biome.Category.NETHER) {
                 //End Generation
             } else if (biome.getCategory() == Biome.Category.THEEND) {
-                //World Generation
+                //world Generation
             } else {
                 if (biome.getCategory() == Biome.Category.ICY)
-                    addOreToBiome(biome, RegistryHandler.FROZEN_RUBY_ORE.get());
+                    addOreToBiome(biome, ModBlocks.FROZEN_RUBY_ORE.get());
                 else {
-                    addOreToBiome(biome, RegistryHandler.RUBY_ORE.get());
+                    addOreToBiome(biome, ModBlocks.RUBY_ORE.get());
                 }
             }
         }

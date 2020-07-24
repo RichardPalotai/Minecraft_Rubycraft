@@ -1,5 +1,6 @@
-package com.ricsi.rubycraft.util;
+package com.ricsi.rubycraft.util.enums;
 
+import com.ricsi.rubycraft.init.ModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
@@ -9,8 +10,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 
 import java.util.function.Supplier;
-
-import static com.ricsi.rubycraft.util.RegistryHandler.RUBY;
 
 public class ModArmorTier implements IArmorMaterial {
 
@@ -45,7 +44,7 @@ public class ModArmorTier implements IArmorMaterial {
         SoundEvent soundEvent = SoundEvents.ITEM_ARMOR_EQUIP_GENERIC;
         String Name = "rubycraft:ruby_armor";
 
-        Supplier<Ingredient> repairMaterial = createIngredientSupplier(RUBY.get());
+        Supplier<Ingredient> repairMaterial = createIngredientSupplier(ModItems.RUBY.get());
 
         return new ModArmorTier(Durability, DamageReductionAmount, Enchantability, soundEvent, Toughness, Name, repairMaterial, knockbackResistance);
     }
@@ -114,7 +113,7 @@ public class ModArmorTier implements IArmorMaterial {
     public float getToughness() { return this.Toughness; }
 
     @Override
-    public float func_230304_f_() {
+    public float getKnockbackResistance() {
         return this.knockbackResistance;
     }
 }

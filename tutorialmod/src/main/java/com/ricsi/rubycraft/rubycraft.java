@@ -1,10 +1,15 @@
 package com.ricsi.rubycraft;
 
 
-import com.ricsi.rubycraft.util.RegistryHandler;
+import com.ricsi.rubycraft.entities.Giacomo;
+import com.ricsi.rubycraft.init.ModBlocks;
+import com.ricsi.rubycraft.init.ModEntityTypes;
+import com.ricsi.rubycraft.init.ModItems;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -22,19 +27,23 @@ public class rubycraft
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        RegistryHandler.init();
+        ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) { }
+    private void setup(final FMLCommonSetupEvent event) {
+        DeferredWorkQueue.runLater(() -> GlobalEntityTypeAttributes.put(ModEntityTypes.GIACOMO.get(), Giacomo.setCustomAttributes().create()));
+    }
 
     private void doClientStuff(final FMLClientSetupEvent event) { }
 
     public static final ItemGroup TAB = new ItemGroup("rubycraftTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegistryHandler.RUBY.get());
+            return new ItemStack(ModItems.RUBY.get());
         }
     };
 }
