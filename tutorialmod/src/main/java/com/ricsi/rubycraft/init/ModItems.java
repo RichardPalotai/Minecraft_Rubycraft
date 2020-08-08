@@ -26,6 +26,8 @@ public class ModItems {
     public static final RegistryObject<Item> GOOD_APPLE = ITEMS.register("good_apple", GoodApple::new);
 
     //SpawnEggs
+    public static final RegistryObject<SpawnEggItem> GIACOMO_SPAWN_EGG = ITEMS.register("giacomo_spawn_egg",
+            ()-> new ModSpawnEggItem(ModEntityTypes.GIACOMO, 0xE7E4E4, 0xC6C6C6, new Item.Properties().group(rubycraft.TAB)));
 
     // Armors
     public static final RegistryObject<Item> RUBY_HELMET = ITEMS.register("ruby_helmet", RubyHelmet::new);

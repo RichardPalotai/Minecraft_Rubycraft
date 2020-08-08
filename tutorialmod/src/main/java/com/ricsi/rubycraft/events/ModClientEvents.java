@@ -1,13 +1,13 @@
 package com.ricsi.rubycraft.events;
 
-import com.ricsi.rubycraft.init.ModBlocks;
 import com.ricsi.rubycraft.init.ModItems;
 import com.ricsi.rubycraft.rubycraft;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -15,12 +15,13 @@ import net.minecraftforge.fml.common.Mod;
 public class ModClientEvents {
 
     @SubscribeEvent
-    public static void onDamageEntity(AttackEntityEvent event) {
-        if (event.getEntityLiving().getHeldItemMainhand().getItem() == ModItems.FROZEN_RUBY.get()) {
-            if (event.getTarget().isAlive()) {
-                LivingEntity target = (LivingEntity) event.getTarget();
-                    target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 10*20));
-            }
+    public static void onHeldItem(PlayerEvent.ItemPickupEvent event) {
+        if (event.getStack().getItem() == ModItems.FROZEN_RUBY.get()) {
+            event.getEntityLiving().addPotionEffect(new EffectInstance(Effects.SLOWNESS, 10 * 20, 3));
         }
+    }
+
+    @SubscribeEvent
+    public static void onKeyPressed(PlayerInteractEvent.RightClickItem event) {
     }
 }
