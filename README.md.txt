@@ -1,2 +1,3 @@
-### Ricskó Minecraft modja
+### My minecraft mod ###
 
+Rubycraft mod "Work in progress"
