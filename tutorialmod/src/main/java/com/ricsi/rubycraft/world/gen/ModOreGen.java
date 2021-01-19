@@ -25,20 +25,17 @@ public class ModOreGen {
     public static OreFeatureConfig.FillerBlockType END_STONE = OreFeatureConfig.FillerBlockType.create("END_STONE",
             "end_stone", new BlockMatcher(Blocks.END_STONE));
 
-    public static OreFeatureConfig.FillerBlockType NETHERRACK = OreFeatureConfig.FillerBlockType.create("NETHERRACK",
-            "netherrack", new BlockMatcher(Blocks.NETHERRACK));
-
     @SubscribeEvent
     public static void generateOres(FMLLoadCompleteEvent event) {
         for (Biome biome : ForgeRegistries.BIOMES) {
 
             //Nether Generation
             if (biome.getCategory() == Biome.Category.NETHER) {
-                addOreToBiome(biome, ModBlocks.NETHER_RUBY_ORE.get());
+                addOreToNether(biome, ModBlocks.NETHER_RUBY_ORE.get());
 
                 //End Generation
             } else if (biome.getCategory() == Biome.Category.THEEND) {
-                addOreToBiome(biome, ModBlocks.END_RUBY_ORE.get());
+                addOreToEnd(biome, ModBlocks.END_RUBY_ORE.get());
 
                 //world Generation
             } else {
@@ -52,7 +49,15 @@ public class ModOreGen {
     }
 
     private static void addOreToBiome(Biome biome, Block block) {
-        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, block.getDefaultState(), 5);
+        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, block.getDefaultState(), 3);
+    }
+
+    private static void addOreToNether(Biome biome, Block block) {
+        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NETHERRACK, block.getDefaultState(), 4);
+    }
+
+    private static void addOreToEnd(Biome biome, Block block) {
+        genOre(biome, 15, 0, 0, 75, END_STONE, block.getDefaultState(), 5);
     }
 
     private static void genOre(Biome biome, int count, int bottomOffset, int topOffset, int max, OreFeatureConfig.FillerBlockType filler, BlockState defaultBlockstate, int size) {

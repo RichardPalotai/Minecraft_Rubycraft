@@ -13,18 +13,5 @@
   "result": {
     "item": "rubycraft:ruby",
     "count": 1
-  },
-
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "rubycraft:ruby_block"
-    }
-  ],
-  "result": {
-    "item": "rubycraft:ruby",
-    "count": 8,
-    "item": "minecraft:diamond",
-    "count": 1
     }
   }
