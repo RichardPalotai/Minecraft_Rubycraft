@@ -8,13 +8,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraftforge.common.ToolType;
 
-public class FrozenRubyOre extends OreBlock {
+public class EndRubyOre extends OreBlock {
 
-    public FrozenRubyOre() {
-        super(Properties.create(Material.IRON)
-                .hardnessAndResistance(6.0f, 6.0f)
+    public EndRubyOre() {
+        super(Properties
+                .create(Material.IRON)
+                .hardnessAndResistance(5.0f, 6.0f)
                 .harvestTool(ToolType.PICKAXE)
-                .harvestLevel(3)
+                .harvestLevel(2)
                 .sound(SoundType.METAL)
         );
     }

@@ -4,6 +4,7 @@ import com.ricsi.rubycraft.init.ModEntityTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
@@ -65,6 +66,8 @@ public class Giacomo extends AnimalEntity {
         this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.5f, 1.0f);
 
     }
+
+
 
     @Nullable
     @Override

@@ -20,5 +20,7 @@
   "item.rubycraft.good_apple": "Good Apple",
   "block.rubycraft.ruby_block": "Ruby Block",
   "block.rubycraft.ruby_ore": "Ruby Ore",
+  "block.rubycraft.nether_ruby_ore": "Nether Ruby Ore",
+  "block.rubycraft.end_ruby_ore": "End Ruby Ore",
   "itemGroup.rubycraftTab": "rubycraft"
 }

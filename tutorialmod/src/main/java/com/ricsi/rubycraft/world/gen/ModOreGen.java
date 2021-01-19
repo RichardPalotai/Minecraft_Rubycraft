@@ -31,8 +31,12 @@ public class ModOreGen {
 
             //Nether Generation
             if (biome.getCategory() == Biome.Category.NETHER) {
+                addOreToNether(biome, ModBlocks.NETHER_RUBY_ORE.get());
+
                 //End Generation
             } else if (biome.getCategory() == Biome.Category.THEEND) {
+                addOreToEnd(biome, ModBlocks.END_RUBY_ORE.get());
+
                 //world Generation
             } else {
                 if (biome.getCategory() == Biome.Category.ICY)
@@ -45,7 +49,15 @@ public class ModOreGen {
     }
 
     private static void addOreToBiome(Biome biome, Block block) {
-        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, block.getDefaultState(), 5);
+        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NATURAL_STONE, block.getDefaultState(), 3);
+    }
+
+    private static void addOreToNether(Biome biome, Block block) {
+        genOre(biome, 15, 0, 0, 75, OreFeatureConfig.FillerBlockType.NETHERRACK, block.getDefaultState(), 4);
+    }
+
+    private static void addOreToEnd(Biome biome, Block block) {
+        genOre(biome, 15, 0, 0, 75, END_STONE, block.getDefaultState(), 5);
     }
 
     private static void genOre(Biome biome, int count, int bottomOffset, int topOffset, int max, OreFeatureConfig.FillerBlockType filler, BlockState defaultBlockstate, int size) {

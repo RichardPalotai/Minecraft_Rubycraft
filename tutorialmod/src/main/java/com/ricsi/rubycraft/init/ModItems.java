@@ -51,6 +51,12 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore",
             () -> new BlockItemBase(ModBlocks.RUBY_ORE.get()));
 
+    public static final RegistryObject<Item> NETHER_RUBY_ORE_ITEM = ITEMS.register("nether_ruby_ore",
+            () -> new BlockItemBase(ModBlocks.NETHER_RUBY_ORE.get()));
+
+    public static final RegistryObject<Item> END_RUBY_ORE_ITEM = ITEMS.register("end_ruby_ore",
+            () -> new BlockItemBase(ModBlocks.END_RUBY_ORE.get()));
+
     public static final RegistryObject<Item> FROZEN_RUBY_ORE_ITEM = ITEMS.register("frozen_ruby_ore",
             () -> new BlockItemBase(ModBlocks.FROZEN_RUBY_ORE.get()));
 

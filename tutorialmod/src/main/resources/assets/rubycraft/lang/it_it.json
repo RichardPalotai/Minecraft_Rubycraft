@@ -19,5 +19,7 @@
   "item.rubycraft.good_apple": "Buona Mela",
   "block.rubycraft.ruby_block": "Blocco rubino",
   "block.rubycraft.ruby_ore": "Minerale di rubino",
+  "block.rubycraft.nether_ruby_ore": "Minerale di rubino inferiore",
+  "block.rubycraft.end_ruby_ore": "Fine minerale di rubino",
   "itemGroup.rubycraftTab": "mestiererubino"
 }
